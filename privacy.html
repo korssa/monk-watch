@@ -24,18 +24,11 @@
       padding: 0.3rem;
       font-size: 1rem;
     }
-    .tip {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: gray;
-    }
   </style>
   <script>
-    function goToTranslation() {
-      const lang = document.getElementById('lang-select').value;
-      const baseUrl = encodeURIComponent(window.location.href);
-      const url = `https://translate.google.com/translate?sl=en&tl=${lang}&u=${baseUrl}`;
-      window.location.href = url;
+    function changeLanguage(lang) {
+      document.documentElement.lang = lang;
+      alert('Language set to ' + lang + '. You can now use your browser’s translation feature if available.');
     }
   </script>
 </head>
@@ -43,7 +36,7 @@
   <h1>🧘 MONK WATCH – Privacy Policy</h1>
 
   <label for="lang-select">🌍 Select your language:</label><br />
-  <select id="lang-select">
+  <select id="lang-select" onchange="changeLanguage(this.value)">
     <option value="af">Afrikaans</option>
     <option value="am">አማርኛ (Amharic)</option>
     <option value="ar">العربية (Arabic)</option>
@@ -118,7 +111,6 @@
     <option value="zh">中文 (简体)</option>
     <option value="zh-TW">中文 (繁體)</option>
   </select>
-  <button onclick="goToTranslation()">👉 GO</button>
 
   <hr />
 
@@ -159,9 +151,5 @@
     <li><strong>Email:</strong> gongmyung@apps.monkwatch.com</li>
     <li><strong>Admin/Operator:</strong> MANSAOK (Apps Division)</li>
   </ul>
-
-  <p class="tip">
-    👉 If Chrome doesn't show the translate option, just press GO after selecting your language.
-  </p>
 </body>
 </html>
