@@ -1,62 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light only">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MONK WATCH – Privacy Policy</title>
-<style>
-body {
-background-color: #ffffff;
-color: #000000;
-font-family: sans-serif;
-max-width: 800px;
-margin: 2rem auto;
-padding: 1rem;
-line-height: 1.6;
-}
-h1 {
-font-size: 1.8rem;
-margin-bottom: 0.5rem;
-}
-label {
-font-weight: bold;
-}
-select, button {
-margin: 0.5rem 0 1.5rem 0;
-padding: 0.3rem;
-font-size: 1rem;
-}
-select {
-width: 100%;
-}
-</style>
-<script>
-function triggerLanguage(lang) {
-document.documentElement.lang = lang;
-location.reload();
-}
-</script>
+  <title>MONK WATCH – Privacy Policy</title>
+  <style>
+    html, body { background:#ffffff !important; color:#000000 !important; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem; line-height: 1.6; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    label { font-weight: bold; }
+    select, button { margin: 0.5rem 0 1.5rem 0; padding: 0.4rem 0.5rem; font-size: 1rem; }
+    select { width: 100%; }
+    hr { margin: 1.5rem 0; }
+    ul, ol { padding-left: 1.2rem; }
+    .muted { color: #444; font-size: 0.95rem; }
+  </style>
+  <script>
+    function triggerLanguage(lang) {
+      try { localStorage.setItem('monkwatch_lang', lang); } catch(e) {}
+      document.documentElement.lang = lang;
+      // 이 페이지는 현재 영어 본문만 제공됩니다. 다국어 번역이 추가되면 여기서 콘텐츠도 교체하세요.
+      alert('Language set to: ' + lang + '\n(현재 본문은 영어입니다)');
+    }
+    (function initLang() {
+      var saved = null;
+      try { saved = localStorage.getItem('monkwatch_lang'); } catch(e) {}
+      var initial = saved || 'en';
+      document.documentElement.lang = initial;
+      window.addEventListener('DOMContentLoaded', function() {
+        var sel = document.getElementById('lang-select');
+        if (sel) sel.value = initial;
+      });
+    })();
+  </script>
 </head>
 <body>
-<h1>🧘 MONK WATCH – Privacy Policy</h1>
+  <h1>🧘 MONK WATCH – Privacy Policy</h1>
 
+  <label for="lang-select">🌍 Select your language:</label><br />
+  <select id="lang-select">
+    <option value="af">Afrikaans</option>
+    <option value="am">አማርኛ (Amharic)</option>
+    <option value="ar">العربية (Arabic)</option>
+    <option value="az">Azərbaycan dili (Azerbaijani)</option>
+    <option value="be">Беларуская (Belarusian)</option>
+    <option value="bg">Български (Bulgarian)</option>
+    <option value="bn">বাংলা (Bengali)</option>
+    <option value="bs">Bosanski (Bosnian)</option>
+    <option value="ca">Català (Catalan)</option>
+    <option value="cs">Čeština (Czech)</option>
+    <option value="cy">Cymraeg (Welsh)</option>
+    <option value="da">Dansk (Danish)</option>
+    <option value="de">Deutsch (German)</option>
+    <option value="el">Ελληνικά (Greek)</option>
+    <option value="en">English</option>
+    <option value="es">Español (Spanish)</option>
+    <option value="et">Eesti (Estonian)</option>
+    <option value="eu">Euskara (Basque)</option>
+    <option value="fa">فارسی (Persian)</option>
+    <option value="fi">Suomi (Finnish)</option>
+    <option value="fil">Filipino</option>
+    <option value="sr">Српски (Serbian)</option>
+    <option value="sv">Svenska (Swedish)</option>
+    <option value="sw">Kiswahili (Swahili)</option>
+    <option value="ta">தமிழ் (Tamil)</option>
+    <option value="te">తెలుగు (Telugu)</option>
+    <option value="th">ไทย (Thai)</option>
+    <option value="tr">Türkçe (Turkish)</option>
+    <option value="uk">Українська (Ukrainian)</option>
+    <option value="ur">اردو (Urdu)</option>
+    <option value="uz">O‘zbek (Uzbek)</option>
+    <option value="vi">Tiếng Việt (Vietnamese)</option>
+    <option value="zh">中文 (简体)</option>
+    <option value="zh-TW">中文 (繁體)</option>
+  </select>
+  <button onclick="triggerLanguage(document.getElementById('lang-select').value)">👉 GO</button>
 
-<label for="lang-select">🌍 Select your language:</label><br />
-<select id="lang-select">
-<option value="af">Afrikaans</option>
-<option value="am">አማርኛ (Amharic)</option>
-<option value="ar">العربية (Arabic)</option>
-<option value="az">Azərbaycan dili (Azerbaijani)</option>
-<option value="be">Беларуская (Belarusian)</option>
-<option value="bg">Български (Bulgarian)</option>
-<option value="bn">বাংলা (Bengali)</option>
-<option value="bs">Bosanski (Bosnian)</option>
-<option value="ca">Català (Catalan)</option>
-<option value="cs">Čeština (Czech)</option>
-<option value="cy">Cymraeg (Welsh)</option>
-<option value="da">Dansk (Danish)</option>
-<option value="de">Deutsch (German)</option>
-<option value="el">Ελληνικά (Greek)</option>
-<option value="en">English</option>
+  <hr />
+
+  <p>
+    MONK WATCH (“the App”) respects your privacy. This App is designed to function
+    without collecting or storing any personal data.
+  </p>
+
+  <h2>📦 Data Collection</h2>
+  <p>
+    We collect no personal information: no names, no emails, no contacts, no location data.
+  </p>
+
+  <h2>📊 Permissions & Their Use</h2>
+  <ul>
+    <li><strong>Usage Stats Access</strong>: Used to check which app is active and adjust the clock overlay accordingly. Data stays on-device.</li>
+    <li><strong>Overlay Permission</strong>: Required to display the clock on top of other apps.</li>
+  </ul>
+
+  <h2>📉 Analytics & Third-Party Services</h2>
+  <p>
+    This app uses no analytics tools and no third-party SDKs. It works fully offline.
+  </p>
+
+  <h2>☸️ Terms of Use</h2>
+  <ol>
+    <li>The App is provided as-is without any warranty.</li>
+    <li>Use is limited to personal, non-commercial purposes.</li>
+    <li>Redistribution or reverse-engineering is not permitted.</li>
+  </ol>
+
+  <h2>📬 Contact</h2>
+  <p>
+    If you have any questions or requests regarding this policy, please contact the developer:
+  </p>
+  <ul>
+    <li><strong>Developer Name:</strong> Kongmyung (공명)</li>
+    <li><strong>Email:</strong> gongmyung@apps.monkwatch.com</li>
+    <li><strong>Admin/Operator:</strong> MANSAOK (Apps Division)</li>
+  </ul>
+
+  <p class="muted">Last updated: 2025-08-23</p>
+</body>
 </html>
+
