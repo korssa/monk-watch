@@ -7,7 +7,8 @@
   <title>MONK WATCH – Privacy Policy</title>
   <style>
     html, body { background:#ffffff !important; color:#000000 !important; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem; line-height: 1.6; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; 
+           max-width: 800px; margin: 2rem auto; padding: 1rem; line-height: 1.6; }
     h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
     label { font-weight: bold; }
     select, button { margin: 0.5rem 0 1.5rem 0; padding: 0.4rem 0.5rem; font-size: 1rem; }
@@ -21,50 +22,17 @@
       try { localStorage.setItem('monkwatch_lang', lang); } catch(e) {}
       document.documentElement.lang = lang;
     }
-    };
+
+    (function initLang() {
+      var saved = null;
+      try { saved = localStorage.getItem('monkwatch_lang'); } catch(e) {}
+      var initial = saved || 'en';
+      document.documentElement.lang = initial;
+    })();
   </script>
 </head>
 <body>
   <h1>🧘 MONK WATCH – Privacy Policy</h1>
-
-  <label for="lang-select">🌍 Select your language:</label><br />
-  <select id="lang-select">
-    <option value="af">Afrikaans</option>
-    <option value="am">አማርኛ (Amharic)</option>
-    <option value="ar">العربية (Arabic)</option>
-    <option value="az">Azərbaycan dili (Azerbaijani)</option>
-    <option value="be">Беларуская (Belarusian)</option>
-    <option value="bg">Български (Bulgarian)</option>
-    <option value="bn">বাংলা (Bengali)</option>
-    <option value="bs">Bosanski (Bosnian)</option>
-    <option value="ca">Català (Catalan)</option>
-    <option value="cs">Čeština (Czech)</option>
-    <option value="cy">Cymraeg (Welsh)</option>
-    <option value="da">Dansk (Danish)</option>
-    <option value="de">Deutsch (German)</option>
-    <option value="el">Ελληνικά (Greek)</option>
-    <option value="en">English</option>
-    <option value="es">Español (Spanish)</option>
-    <option value="et">Eesti (Estonian)</option>
-    <option value="eu">Euskara (Basque)</option>
-    <option value="fa">فارسی (Persian)</option>
-    <option value="fi">Suomi (Finnish)</option>
-    <option value="fil">Filipino</option>
-    <option value="sr">Српски (Serbian)</option>
-    <option value="sv">Svenska (Swedish)</option>
-    <option value="sw">Kiswahili (Swahili)</option>
-    <option value="ta">தமிழ் (Tamil)</option>
-    <option value="te">తెలుగు (Telugu)</option>
-    <option value="th">ไทย (Thai)</option>
-    <option value="tr">Türkçe (Turkish)</option>
-    <option value="uk">Українська (Ukrainian)</option>
-    <option value="ur">اردو (Urdu)</option>
-    <option value="uz">O‘zbek (Uzbek)</option>
-    <option value="vi">Tiếng Việt (Vietnamese)</option>
-    <option value="zh">中文 (简体)</option>
-    <option value="zh-TW">中文 (繁體)</option>
-  </select>
-  <button onclick="triggerLanguage(document.getElementById('lang-select').value)">👉 GO</button>
 
   <hr />
 
