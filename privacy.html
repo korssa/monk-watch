@@ -20,19 +20,8 @@
     function triggerLanguage(lang) {
       try { localStorage.setItem('monkwatch_lang', lang); } catch(e) {}
       document.documentElement.lang = lang;
-      // 이 페이지는 현재 영어 본문만 제공됩니다. 다국어 번역이 추가되면 여기서 콘텐츠도 교체하세요.
-      alert('Language set to: ' + lang + '\n(현재 본문은 영어입니다)');
     }
-    (function initLang() {
-      var saved = null;
-      try { saved = localStorage.getItem('monkwatch_lang'); } catch(e) {}
-      var initial = saved || 'en';
-      document.documentElement.lang = initial;
-      window.addEventListener('DOMContentLoaded', function() {
-        var sel = document.getElementById('lang-select');
-        if (sel) sel.value = initial;
-      });
-    })();
+    };
   </script>
 </head>
 <body>
