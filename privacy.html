@@ -14,6 +14,33 @@
     ul, ol { padding-left: 1.2rem; }
     .muted { color: #444; font-size: 0.95rem; }
   </style>
+<script>
+(function triggerChromeTranslateNudge(){
+  // 1) 사용자 UI 언어 얻기
+  var ui = (navigator.language || navigator.userLanguage || 'en').slice(0,2).toLowerCase();
+  if (ui === 'en') return; // 영어 유저면 굳이 안 건드림
+
+  // 2) 이전에 "이 사이트 번역 안 함" 해버렸으면 꺾임 → URL에 힌트라도 남겨둠
+  try { localStorage.removeItem('googtrans'); } catch(e) {}
+
+  // 3) 언어 태그를 잠깐 흔들었다(en→da→en)가 핵심 싸대기
+  var html = document.documentElement;
+  var orig = html.getAttribute('lang') || 'en';
+  html.setAttribute('lang', 'da');               // 잠깐 덴마크어로 위장
+  setTimeout(function(){
+    html.setAttribute('lang', orig);             // 즉시 복원(en)
+    // 4) 주소에 hl 힌트 부여(새로고침 없이 치환)
+    try {
+      var url = new URL(location.href);
+      if (!url.searchParams.get('hl')) {
+        url.searchParams.set('hl', ui);
+        history.replaceState(null, '', url.toString());
+      }
+    } catch(e){}
+  }, 50);
+})();
+</script>
+  
 </head>
 <body>
   <h1>🧘 MONK WATCH – Privacy Policy</h1>
